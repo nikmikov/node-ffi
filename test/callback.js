@@ -107,8 +107,8 @@ describe('Callback', function () {
     *   See https://github.com/rbranson/node-ffi/issues/153
     */
     it('multiple callback invocations from uv thread pool should be properly synchronized', function (done) {
-      this.timeout(30000)
-      var iterations = 50000
+      this.timeout(60000)
+      var iterations = 100000
       var cb = ffi.Callback('string', ['string'], function (val) {
         if (val === "ping" && --iterations > 0) {
 	  return "pong"
